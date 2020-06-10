@@ -10,6 +10,10 @@
     <div class="container">
       <h1>Регистрация</h1>
     <form action="php/reg.php" method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp">
+      </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Логин</label>
           <input type="text" class="form-control" name="login" id="login" aria-describedby="emailHelp">

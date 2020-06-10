@@ -1,6 +1,7 @@
 <?php
 $login = filter_var(trim($_POST['login']),FILTER_SANITIZE_STRING);
 $pass = filter_var(trim($_POST['Pass']),FILTER_SANITIZE_STRING);
+$email = filter_var(trim($_POST['Email']),FILTER_SANITIZE_STRING);
 
 if (mb_strlen($login)<2 || mb_strlen($login)>30)
   {
@@ -14,7 +15,7 @@ if (mb_strlen($login)<2 || mb_strlen($login)>30)
     exit;
     }
 $mysql = new mysqli('auth','root','','test');
-$mysql->query("INSERT INTO `auth` ( `login`, `pass`) VALUES ('$login', '$pass')") ;
+$mysql->query("INSERT INTO `auth` ( `login`, `pass`, `email`) VALUES ('$login', '$pass', '$email')") ;
 echo($mysqli->errno);
 header('location: /' );
 
