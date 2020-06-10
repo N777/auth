@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 08 2020 г., 12:27
+-- Время создания: Июн 10 2020 г., 21:02
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -29,8 +29,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `auth` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `login` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `pass` varchar(15) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -38,11 +39,11 @@ CREATE TABLE `auth` (
 -- Дамп данных таблицы `auth`
 --
 
-INSERT INTO `auth` (`id`, `login`, `pass`) VALUES
-(1, 'sdfsdf', 'sdfsdfsdf'),
-(2, 'asdasdas', 'sasdasdasdsada'),
-(3, '111', '111'),
-(4, '123', '132');
+INSERT INTO `auth` (`id`, `login`, `email`, `pass`) VALUES
+(2, 'asdasdas', '', 'sasdasdasdsada'),
+(3, '111', '', '111'),
+(4, '123', '', '132'),
+(5, '88888', 'egorovvadim2001@gmail.com', '555');
 
 --
 -- Индексы сохранённых таблиц
@@ -63,7 +64,7 @@ ALTER TABLE `auth`
 -- AUTO_INCREMENT для таблицы `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
